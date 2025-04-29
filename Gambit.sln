@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_01", "Gambit-Demo01\Demo_01.csproj", "{12E64BF7-F9F0-401D-A5D3-9DC0B14E4DD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_01", "Demo_01\Demo_01.csproj", "{12E64BF7-F9F0-401D-A5D3-9DC0B14E4DD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_02_POO", "Demo_POO\Demo_02_POO.csproj", "{DD45FD2E-2A5F-4200-B348-DF3C6CBF640A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_02_POO", "Demo_02_POO\Demo_02_POO.csproj", "{DD45FD2E-2A5F-4200-B348-DF3C6CBF640A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_03_Delegue", "Demo_03_Delegue\Demo_03_Delegue.csproj", "{23FD5FB4-08F7-49DC-954E-4B8D5A9FD620}"
 EndProject
