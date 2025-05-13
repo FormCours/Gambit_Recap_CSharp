@@ -1,0 +1,19 @@
+﻿@using Demo_06_IntroASP.Services
+
+@inject SingletonService s3;
+@inject ScopedService sc3;
+@inject TransientService t3;
+
+<div>
+	<p>Single1 : @ViewData["S1"]</p>
+	<p>Single2 : @ViewData["S2"]</p>
+	<p>Single3 : @s3.InitializeCurrent</p>
+
+	<p>Scoped1 : @ViewData["SC1"]</p>
+	<p>Scoped2 : @ViewData["SC2"]</p>
+	<p>Scoped3 : @sc3.InitializeCurrent</p>
+	
+	<p>Transient1 : @ViewData["T1"]</p>
+	<p>Transient2 : @ViewData["T2"]</p>
+	<p>Transient3 : @t3.InitializeCurrent</p>
+</div>
