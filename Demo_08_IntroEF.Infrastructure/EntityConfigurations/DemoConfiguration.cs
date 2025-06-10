@@ -9,7 +9,7 @@ namespace Demo_08_IntroEF.Infrastructure.EntityConfigurations
         public void Configure(EntityTypeBuilder<Demo> builder)
         {
             // - Table
-            builder.ToTable("DemoAdo");
+            builder.ToTable("DemoEF");
 
 
             // - Clef primaire
