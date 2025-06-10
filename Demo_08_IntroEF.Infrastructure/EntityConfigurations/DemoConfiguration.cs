@@ -42,6 +42,34 @@ namespace Demo_08_IntroEF.Infrastructure.EntityConfigurations
             builder.HasIndex(m => m.Name)
                 .HasDatabaseName("IDX_Demo__Name")
                 .IsDescending();
+
+            // - Seeds
+            builder.HasData([
+                new Demo() {
+                    Id = 1,
+                    Name = "Ex1",
+                    Description = "Exemple de Seed data",
+                    IsActive = true,
+                },
+                new Demo() {
+                    Id = 2,
+                    Name = "Ex2",
+                    Description = "Encore plus :o",
+                    IsActive = false,
+                },
+                new Demo() {
+                    Id = 3,
+                    Name = "Nullable",
+                    Description = null,
+                    IsActive = true,
+                },
+                new Demo() {
+                    Id = 4,
+                    Name = "Ex3",
+                    Description = "Fin de l'exemple !",
+                    IsActive = true,
+                }
+            ]);
         }
     }
 }
