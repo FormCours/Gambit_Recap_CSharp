@@ -32,7 +32,16 @@ async Task Salad_PrepareAsync() // 10s
 async Task Salad_DressingAsync() // 5s
 {
     Console.WriteLine("[Salad] Dressing - Start");
-    await Task.Delay(5_000);
+    await Task.Run(() =>
+    {
+        // Thread en arriere plan
+        // Cas pratique -> Un gros traitement sur le CPU
+        for (int i = 0; i < 500; i++)
+        {
+            Thread.Sleep(10);
+            i++;
+        }
+    });
     Console.WriteLine("[Salad] Dressing - End");
 }
 
