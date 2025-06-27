@@ -1,18 +1,18 @@
 ﻿#region Méthodes de la démo
-async Task Coffee_StartMachine() // 33s
+async Task Coffee_StartMachineAsync() // 33s
 {
     Console.WriteLine("[Coffee] Machine - Start");
     await Task.Delay(33_000);
     Console.WriteLine("[Coffee] Machine - End");
 }
-async Task Coffee_Serve() // 12s
+async Task Coffee_ServeAsync() // 12s
 {
     Console.WriteLine("[Coffee] Serve - Start");
     await Task.Delay(12_000);
     Console.WriteLine("[Coffee] Serve - End");
 }
 
-async Task Salad_CupVegetables(params string[] vegetables) // 10s + 5s par légumes
+async Task Salad_CupVegetablesAsync(params string[] vegetables) // 10s + 5s par légumes
 {
         Console.WriteLine("[Salade] Cut Vegetables - Start");
     foreach (string vegetable in vegetables)
@@ -23,33 +23,33 @@ async Task Salad_CupVegetables(params string[] vegetables) // 10s + 5s par légu
     await Task.Delay(5_000);
     Console.WriteLine("[Salade] Cut Vegetables - End");
 }
-async Task Salad_Prepare() // 10s
+async Task Salad_PrepareAsync() // 10s
 {
     Console.WriteLine("[Salad] Prepare - Start");
     await Task.Delay(10_000);
     Console.WriteLine("[Salad] Prepare - End");
 }
-async Task Salad_Dressing() // 5s
+async Task Salad_DressingAsync() // 5s
 {
     Console.WriteLine("[Salad] Dressing - Start");
     await Task.Delay(5_000);
     Console.WriteLine("[Salad] Dressing - End");
 }
 
-async Task Meal_HeatPan() // 21s
+async Task Meal_HeatPanAsync() // 21s
 {
     Console.WriteLine("[Meal] HeatPan - Start");
     await Task.Delay(21_000);
     Console.WriteLine("[Meal] HeatPan - End");
 }
-async Task Meal_Cooking() //21s
+async Task Meal_CookingAsync() //21s
 {
     Console.WriteLine("[Meal] Cooking - Start");
     await Task.Delay(21_000);
     Console.WriteLine("[Meal] Cooking - End");
 }
 
-async Task Apero() // 4s
+async Task AperoAsync() // 4s
 {
     Console.WriteLine("[Apero] Serve - Start");
     await Task.Delay(4_000);
@@ -58,31 +58,31 @@ async Task Apero() // 4s
 #endregion
 
 #region Méthode Agregation
-async Task Coffee() {
-    await Coffee_StartMachine();
-    await Coffee_Serve();
+async Task CoffeeAsync() {
+    await Coffee_StartMachineAsync();
+    await Coffee_ServeAsync();
 }
-async Task Salad()
+async Task SaladAsync()
 {
-    await Salad_CupVegetables("Salade", "Tomate", "Pomme", "Ognion");
-    await Salad_Prepare();
-    await Salad_Dressing();
+    await Salad_CupVegetablesAsync("Salade", "Tomate", "Pomme", "Ognion");
+    await Salad_PrepareAsync();
+    await Salad_DressingAsync();
 }
 
-async Task Meal()
+async Task MealAsync()
 {
-    await Meal_HeatPan();
-    await Meal_Cooking();
+    await Meal_HeatPanAsync();
+    await Meal_CookingAsync();
 }
 #endregion
 
 #region L'utilisation
 Console.WriteLine("Debut !!!");
 
-Task coffeeTask = Coffee();
-Task saladTask = Salad();
-Task mealTask = Meal();
-Task aperoTask = Apero();
+Task coffeeTask = CoffeeAsync();
+Task saladTask = SaladAsync();
+Task mealTask = MealAsync();
+Task aperoTask = AperoAsync();
 
 List<Task> tasks = [ coffeeTask, saladTask, mealTask, aperoTask ];
 while(tasks.Count > 0)
