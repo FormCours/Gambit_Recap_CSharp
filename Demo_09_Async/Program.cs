@@ -57,15 +57,34 @@ async Task Apero() // 4s
 }
 #endregion
 
+#region Méthode Agregation
+async Task Coffee() {
+    await Coffee_StartMachine();
+    await Coffee_Serve();
+}
+async Task Salad()
+{
+    await Salad_CupVegetables("Salade", "Tomate", "Pomme", "Ognion");
+    await Salad_Prepare();
+    await Salad_Dressing();
+}
+
+async Task Meal()
+{
+    await Meal_HeatPan();
+    await Meal_Cooking();
+}
+#endregion
+
 #region L'utilisation
 Console.WriteLine("Debut !!!");
-Coffee_StartMachine();
-Coffee_Serve();
-Salad_CupVegetables("Salade", "Tomate", "Pomme", "Ognion");
-Salad_Prepare();
-Salad_Dressing();
-Meal_HeatPan();
-Meal_Cooking();
-Apero();
+
+Task coffeeTask = Coffee();
+Task saladTask = Salad();
+Task mealTask = Meal();
+Task aperoTask = Apero();
+
+await Task.WhenAll(coffeeTask, saladTask, mealTask, aperoTask);
+
 Console.WriteLine("Fin !!!");
 #endregion
