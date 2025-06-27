@@ -84,7 +84,31 @@ Task saladTask = Salad();
 Task mealTask = Meal();
 Task aperoTask = Apero();
 
-await Task.WhenAll(coffeeTask, saladTask, mealTask, aperoTask);
+List<Task> tasks = [ coffeeTask, saladTask, mealTask, aperoTask ];
+while(tasks.Count > 0)
+{
+    Task finishedTask = await Task.WhenAny(tasks);
+
+    if (finishedTask == coffeeTask)
+    {
+        Console.WriteLine("[Coffee] Finish");
+    }
+    if (finishedTask == saladTask)
+    {
+        Console.WriteLine("[Salad] Finish");
+    }
+    if (finishedTask == mealTask)
+    {
+        Console.WriteLine("[Meal] Finish");
+    }
+    if (finishedTask == aperoTask)
+    {
+        Console.WriteLine("[Apero] Finish");
+    }
+
+    await finishedTask;
+    tasks.Remove(finishedTask);
+}
 
 Console.WriteLine("Fin !!!");
 #endregion
