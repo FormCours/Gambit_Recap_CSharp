@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_08_IntroEF.App", "Demo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_08_IntroEF.Infrastructure", "Demo_08_IntroEF.Infrastructure\Demo_08_IntroEF.Infrastructure.csproj", "{1086A7D8-27CC-48B8-ACF6-0D7F27DA51CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_09_Async", "Demo_09_Async\Demo_09_Async.csproj", "{FE40B3BB-E319-4944-80FE-48A31676C947}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{1086A7D8-27CC-48B8-ACF6-0D7F27DA51CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1086A7D8-27CC-48B8-ACF6-0D7F27DA51CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1086A7D8-27CC-48B8-ACF6-0D7F27DA51CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE40B3BB-E319-4944-80FE-48A31676C947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE40B3BB-E319-4944-80FE-48A31676C947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE40B3BB-E319-4944-80FE-48A31676C947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE40B3BB-E319-4944-80FE-48A31676C947}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
